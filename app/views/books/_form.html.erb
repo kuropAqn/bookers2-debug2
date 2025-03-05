@@ -1,8 +1,8 @@
-<% if @book.errors.any? %>
+<% if book.errors.any? %>
   <div id="error_explanation">
-    <h3><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h3>
+    <h3><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h3>
     <ul>
-      <% @book.errors.full_messages.each do |message| %>
+      <% book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
@@ -10,7 +10,7 @@
 <% end %>
 
 
-<%= form_with model: @book, method: :post do |f| %>
+<%= form_with model: book, method: :post do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control book_title' %>
