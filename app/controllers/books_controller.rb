@@ -15,6 +15,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
+    @button_text = 'Create Book'
     if @book.save
       redirect_to book_path(@book), notice: "You have created book successfully."
     else
@@ -24,6 +25,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @button_text = 'Edit'
     book = Book.find(params[:id])
     unless book.user.id == current_user.id
       redirect_to books_path
