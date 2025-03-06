@@ -10,7 +10,7 @@
 <% end %>
 
 
-<%= form_with model: book, method: :post do |f| %>
+<%= form_with model: book, url: book.persisted? ? book_path(book) : books_path, method: book.persisted? ? :patch : :post do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control book_title' %>
