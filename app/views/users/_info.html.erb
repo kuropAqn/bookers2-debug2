@@ -8,10 +8,13 @@
 	  <th>introduction</th>
 	  <th><%= user.introduction %></th>
   </tr>
+  <%= render partial: "relationships/follow", locals: { user: current_user }%>
+  <td><%= render partial: "relationships/follow_btn", locals: { user: current_user } %></td>
 </table>
-　
+
 <div class='row'>
   <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
     <i class="fas fa-user-cog"></i>
   <% end %>
 </div>
+
