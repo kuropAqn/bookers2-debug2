@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resource :relationships, only: [:create, :destroy]
   end
 
-
+  get "/search", to: "searches#search"
 
   resources :books do
   resources :book_comments,only: [:create,:destroy]
