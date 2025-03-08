@@ -11,11 +11,12 @@
   <%= render partial: "relationships/follow", locals: { user: user } %>
 
 </table>
-
 <div class='row'>
-  <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
-    <i class="fas fa-user-cog"></i>
+  <% if current_user == user %>
+    <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
+   <i class="fas fa-user-cog"></i>
   <% end %>
-    <%= render partial: "relationships/follow_btn", locals: { user: user } %>
+    <% end %>
+<%= render partial: "relationships/follow_btn", locals: { user: user } %>
 </div>
 
