@@ -8,8 +8,8 @@
 	  <th>introduction</th>
 	  <th><%= user.introduction %></th>
   </tr>
-  <%= render partial: "relationships/follow", locals: { user: current_user }%>
-  <td><%= render partial: "relationships/follow_btn", locals: { user: current_user } %></td>
+  <%= render partial: "relationships/follow", locals: { user: current_user } %>
+  
 </table>
 
 <div class='row'>
