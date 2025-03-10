@@ -1,8 +1,8 @@
 class BookCommentsController < ApplicationController
-  before_action :is_matching_login_user, only: [:destroy]
 
   def create
     book = Book.find(params[:book_id])
+    
     comment = current_user.book_comments.new(book_comment_params)
     comment.book_id = book.id
     comment.save
@@ -23,5 +23,6 @@ class BookCommentsController < ApplicationController
       redirect_to books_path
     end
 end
+
 
 end
